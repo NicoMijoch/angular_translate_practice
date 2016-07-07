@@ -3,7 +3,7 @@
 	<head>
 	
 		<!-- Agregar los <META> tags-->
-		<title>Angular Translate Practice</title>
+		<title>{{mensaje}} Translate Practice</title>
 		<!-- Bower dependencies -->
 		<script src="./bower_components/angular/angular.js"></script>
 		<script src="./bower_components/angular-ui-router/release/angular-ui-router.js"></script>
@@ -11,10 +11,16 @@
 		<script src="./js/tanslationApp.js"></script>
 	</head>
 	<body>
-		<h1>Angular Translate Practice</h1>
-		<div ui-view></div>
+		<h1>{{mensaje}} {{"Translate Practice" | uppercase | sacaras}}</h1>
+		
+		<p class="nav">
 		<!-- We'll also add some navigation: -->
-		<a ui-sref="state1">State 1</a>
-		<a ui-sref="state2">State 2</a>
+		<a ui-sref="state1({param1: 25})" ui-sref-active="active">State 1</a>
+		<a ui-sref="state2" ui-sref-active="active">State 2</a>
+		<a ui-sref="state3" ui-sref-active="active">State 3</a>
+		</p>
+		
+		<!-- uiRouter render the views using ui-view -->
+		<div ui-view></div>
 	</body>
 </html>
